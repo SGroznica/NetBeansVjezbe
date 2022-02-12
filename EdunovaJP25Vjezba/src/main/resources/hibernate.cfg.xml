@@ -27,8 +27,8 @@
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
         
         
-        <mapping class="edunova.model.vjezbanje.Mobitel" />
-        <mapping class="edunova.model.vjezbanje.Olovka" />
+        <mapping class="edunova.model.vjezba.Mobitel" />
+        <mapping class="edunova.model.vjezba.Olovka" />
         
         
         
