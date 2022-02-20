@@ -14,10 +14,7 @@ import java.util.Date;
 import java.util.List;
 import org.hibernate.Session;
 
-/**
- *
- * @author tjakopec
- */
+
 public class Start {
     
     private Session session;

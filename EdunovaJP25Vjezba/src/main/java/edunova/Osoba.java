@@ -6,6 +6,7 @@
 package edunova;
 
 import javax.persistence.Column;
+import javax.persistence.ManyToMany;
 import javax.persistence.MappedSuperclass;
 
 /**
@@ -14,7 +15,7 @@ import javax.persistence.MappedSuperclass;
  */
 @MappedSuperclass
 public abstract class Osoba extends Entitet{
-    
+   
     private String ime;
     private String prezime;
     @Column(columnDefinition = "char(11)")

@@ -66,10 +66,12 @@ Potrebno je ručno kreirati bazu
         <mapping class="edunova.model.vjezba.veze.Slika" />
                 -->
         
+          <mapping class="edunova.Osoba" />
         <mapping class="edunova.Polaznik" />
         <mapping class="edunova.Predavac" />
         <mapping class="edunova.Smjer" />
         <mapping class="edunova.Grupa" />
+      
         
         <!-- Domaća zadaća: Mapirati Edunova model tako da bude identičan verziji s baza nastava -->
         
