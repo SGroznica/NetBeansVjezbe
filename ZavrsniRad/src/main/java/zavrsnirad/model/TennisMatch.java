@@ -5,28 +5,41 @@
 package zavrsnirad.model;
 
 import java.util.Date;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  *
  * @author stjep
  */
 @Entity
-public class TennisMatch {
+public class TennisMatch extends Entitet {
 
-    @Id
-    private int sifra;
+    
+    private Igrac igrac1;
+    private Igrac igrac2;
     private Date datumigranja;
     private String teren;
     private String rezultat;
+    private Igrac pobjednik;
 
-    public int getSifra() {
-        return sifra;
+    public Igrac getIgrac1() {
+        return igrac1;
     }
 
-    public void setSifra(int sifra) {
-        this.sifra = sifra;
+    public void setIgrac1(Igrac igrac1) {
+        this.igrac1 = igrac1;
+    }
+
+    public Igrac getIgrac2() {
+        return igrac2;
+    }
+
+    public void setIgrac2(Igrac igrac2) {
+        this.igrac2 = igrac2;
     }
 
     public Date getDatumigranja() {
@@ -51,6 +64,14 @@ public class TennisMatch {
 
     public void setRezultat(String rezultat) {
         this.rezultat = rezultat;
+    }
+
+    public Igrac getPobjednik() {
+        return pobjednik;
+    }
+
+    public void setPobjednik(Igrac pobjednik) {
+        this.pobjednik = pobjednik;
     }
 
 }

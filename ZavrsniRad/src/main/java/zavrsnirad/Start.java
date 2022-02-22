@@ -4,6 +4,7 @@
  */
 package zavrsnirad;
 
+import org.hibernate.Session;
 import zavrsnirad.util.HibernateUtil;
 
 /**
@@ -11,8 +12,15 @@ import zavrsnirad.util.HibernateUtil;
  * @author stjep
  */
 public class Start {
+    
+    private Session session;
+    
+    public Start(){
+        this.session = HibernateUtil.getSession();
+    }
+    
     public static void main(String[] args) {
-        HibernateUtil.getSession();
+        new Start();
     }
 
 }

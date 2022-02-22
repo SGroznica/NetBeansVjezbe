@@ -4,27 +4,20 @@
  */
 package zavrsnirad.model;
 
+import java.util.List;
 import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
  * @author stjep
  */
 @Entity
-public class Red {
+public class Red extends Entitet {
 
-    @Id
-    private int sifra;
+   
     private String brojreda;
-
-    public int getSifra() {
-        return sifra;
-    }
-
-    public void setSifra(int sifra) {
-        this.sifra = sifra;
-    }
+    private Igrac igrac;
 
     public String getBrojreda() {
         return brojreda;
@@ -34,4 +27,16 @@ public class Red {
         this.brojreda = brojreda;
     }
 
+    public Igrac getIgrac() {
+        return igrac;
+    }
+
+    public void setIgrac(Igrac igrac) {
+        this.igrac = igrac;
+    }
+
+    
+    
+   
+    
 }

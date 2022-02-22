@@ -4,27 +4,26 @@
  */
 package zavrsnirad.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.MappedSuperclass;
 
-@Entity(name="Igrač")
-public class Igrac {
 
-    @Id
+@MappedSuperclass
+public class Igrac extends Entitet {
 
-    private int sifra;
+    
     private String ime;
     private String prezime;
+    @Column(columnDefinition = "char(11)")
     private String oib;
     private String brojmobitela;
+    @ManyToOne
+    private Red red;
 
-    public int getSifra() {
-        return sifra;
-    }
-
-    public void setSifra(int sifra) {
-        this.sifra = sifra;
-    }
+   
 
     public String getIme() {
         return ime;
@@ -58,4 +57,13 @@ public class Igrac {
         this.brojmobitela = brojmobitela;
     }
 
+    public Red getRed() {
+        return red;
+    }
+
+    public void setRed(Red red) {
+        this.red = red;
+    }
+
+    
 }
