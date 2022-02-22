@@ -11,3 +11,6 @@ Matrica/src/main/java/edunova/matrica/Start.java
 Matrica/src/main/java/edunova/matrica/Prozor.java
 Matrica/src/main/java/edunova/matrica/Prozor.form
 Matrica/pom.xml
+/ZavrsniRad/target/
+EdunovaJP25Vjezba/src/main/resources/hibernate.cfg.xml
+EdunovaJP25Vjezba/target/classes/hibernate.cfg.xml
