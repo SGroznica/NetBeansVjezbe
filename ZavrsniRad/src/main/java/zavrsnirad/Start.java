@@ -6,6 +6,7 @@ package zavrsnirad;
 
 import org.hibernate.Session;
 import zavrsnirad.util.HibernateUtil;
+import zavrsnirad.util.PocetniInsert;
 
 /**
  *
@@ -16,7 +17,8 @@ public class Start {
     private Session session;
     
     public Start(){
-        this.session = HibernateUtil.getSession();
+        //this.session = HibernateUtil.getSession();
+        PocetniInsert.izvedi();
     }
     
     public static void main(String[] args) {
