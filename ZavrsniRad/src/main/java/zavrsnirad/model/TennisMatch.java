@@ -33,8 +33,7 @@ public class TennisMatch {
     private Date datumigranja;
     private String teren;
     private String rezultat;
-    @OneToMany
-    private List<Igrac> pobjednik;
+    private String pobjednik;
 
     public Long getSifra() {
         return sifra;
@@ -84,11 +83,11 @@ public class TennisMatch {
         this.rezultat = rezultat;
     }
 
-    public List<Igrac> getPobjednik() {
+    public String getPobjednik() {
         return pobjednik;
     }
 
-    public void setPobjednik(List<Igrac> pobjednik) {
+    public void setPobjednik(String pobjednik) {
         this.pobjednik = pobjednik;
     }
 

@@ -24,9 +24,7 @@ public class Igrac {
     @Column(columnDefinition = "char(11)")
     private String oib;
     private String brojmobitela;
-    @ManyToOne
-   private Red red;
-   
+  
 
     public Long getSifra() {
         return sifra;
@@ -68,13 +66,7 @@ public class Igrac {
         this.brojmobitela = brojmobitela;
     }
 
-    public Red getRed() {
-        return red;
-    }
-
-    public void setRed(Red red) {
-        this.red = red;
-    }
+  
 
 
     
