@@ -6,6 +6,10 @@ package zavrsnirad.model;
 
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 /**
@@ -13,11 +17,22 @@ import javax.persistence.OneToMany;
  * @author stjep
  */
 @Entity
-public class Red extends Entitet {
+public class Red {
 
-   
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long sifra;
     private String brojreda;
-    private Igrac igrac;
+    @ManyToMany
+    private List<Igrac> igraci;
+
+    public Long getSifra() {
+        return sifra;
+    }
+
+    public void setSifra(Long sifra) {
+        this.sifra = sifra;
+    }
 
     public String getBrojreda() {
         return brojreda;
@@ -27,16 +42,19 @@ public class Red extends Entitet {
         this.brojreda = brojreda;
     }
 
-    public Igrac getIgrac() {
-        return igrac;
+    public List<Igrac> getIgraci() {
+        return igraci;
     }
 
-    public void setIgrac(Igrac igrac) {
-        this.igrac = igrac;
+    public void setIgraci(List<Igrac> igraci) {
+        this.igraci = igraci;
     }
 
     
-    
+
    
     
+
+    
+
 }

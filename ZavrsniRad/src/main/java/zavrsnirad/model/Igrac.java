@@ -6,24 +6,35 @@ package zavrsnirad.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.MappedSuperclass;
 
 
-@MappedSuperclass
-public class Igrac extends Entitet {
 
-    
+@Entity
+public class Igrac {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long sifra;
     private String ime;
     private String prezime;
     @Column(columnDefinition = "char(11)")
     private String oib;
     private String brojmobitela;
     @ManyToOne
-    private Red red;
-
+   private Red red;
    
+
+    public Long getSifra() {
+        return sifra;
+    }
+
+    public void setSifra(Long sifra) {
+        this.sifra = sifra;
+    }
 
     public String getIme() {
         return ime;
@@ -64,6 +75,12 @@ public class Igrac extends Entitet {
     public void setRed(Red red) {
         this.red = red;
     }
+
+
+    
+
+   
+
 
     
 }

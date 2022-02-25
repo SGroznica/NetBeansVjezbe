@@ -5,40 +5,58 @@
 package zavrsnirad.model;
 
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
  * @author stjep
  */
 @Entity
-public class TennisMatch extends Entitet {
+public class TennisMatch {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long sifra;
     
-    private Igrac igrac1;
-    private Igrac igrac2;
+    @OneToMany
+    private List<Igrac> igrac1;
+    @OneToMany
+    private List<Igrac> igrac2;
     private Date datumigranja;
     private String teren;
     private String rezultat;
-    private Igrac pobjednik;
+    @OneToMany
+    private List<Igrac> pobjednik;
 
-    public Igrac getIgrac1() {
+    public Long getSifra() {
+        return sifra;
+    }
+
+    public void setSifra(Long sifra) {
+        this.sifra = sifra;
+    }
+
+    public List<Igrac> getIgrac1() {
         return igrac1;
     }
 
-    public void setIgrac1(Igrac igrac1) {
+    public void setIgrac1(List<Igrac> igrac1) {
         this.igrac1 = igrac1;
     }
 
-    public Igrac getIgrac2() {
+    public List<Igrac> getIgrac2() {
         return igrac2;
     }
 
-    public void setIgrac2(Igrac igrac2) {
+    public void setIgrac2(List<Igrac> igrac2) {
         this.igrac2 = igrac2;
     }
 
@@ -66,12 +84,16 @@ public class TennisMatch extends Entitet {
         this.rezultat = rezultat;
     }
 
-    public Igrac getPobjednik() {
+    public List<Igrac> getPobjednik() {
         return pobjednik;
     }
 
-    public void setPobjednik(Igrac pobjednik) {
+    public void setPobjednik(List<Igrac> pobjednik) {
         this.pobjednik = pobjednik;
     }
+
+    
+
+  
 
 }
