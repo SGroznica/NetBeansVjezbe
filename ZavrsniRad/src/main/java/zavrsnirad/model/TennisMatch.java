@@ -14,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -26,10 +27,10 @@ public class TennisMatch {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long sifra;
     
-    @OneToMany
-    private List<Igrac> igrac1;
-    @OneToMany
-    private List<Igrac> igrac2;
+    @OneToOne
+    private Igrac igrac1;
+    @OneToOne
+    private Igrac igrac2;
     private Date datumigranja;
     private String teren;
     private String rezultat;
@@ -43,22 +44,24 @@ public class TennisMatch {
         this.sifra = sifra;
     }
 
-    public List<Igrac> getIgrac1() {
+    public Igrac getIgrac1() {
         return igrac1;
     }
 
-    public void setIgrac1(List<Igrac> igrac1) {
+    public void setIgrac1(Igrac igrac1) {
         this.igrac1 = igrac1;
     }
 
-    public List<Igrac> getIgrac2() {
+    public Igrac getIgrac2() {
         return igrac2;
     }
 
-    public void setIgrac2(List<Igrac> igrac2) {
+    public void setIgrac2(Igrac igrac2) {
         this.igrac2 = igrac2;
     }
 
+    
+    
     public Date getDatumigranja() {
         return datumigranja;
     }

@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 /**
@@ -23,8 +24,8 @@ public class Red {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long sifra;
     private String brojreda;
-    @ManyToMany
-    private List<Igrac> igraci;
+    @ManyToOne
+    private Igrac igraci;
 
     public Long getSifra() {
         return sifra;
@@ -42,19 +43,12 @@ public class Red {
         this.brojreda = brojreda;
     }
 
-    public List<Igrac> getIgraci() {
+    public Igrac getIgraci() {
         return igraci;
     }
 
-    public void setIgraci(List<Igrac> igraci) {
+    public void setIgraci(Igrac igraci) {
         this.igraci = igraci;
     }
-
-    
-
-   
-    
-
-    
 
 }
